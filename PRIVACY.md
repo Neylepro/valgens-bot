@@ -8,7 +8,7 @@ Please Read This Privacy Policy Because It Will Help You To Get Tthat What We Do
 
 2 - **Why Do We Need This Information** - `We Need This Information So That Every Guild IP And PORT Remain Seprated With Their Guild ID , This Also Help Minecraft Server Status Bot To Get Correct IP and PORT Of Every Guild And Display Their Minecraft Server Status` .
 
-3 - **Any Issues , How To Contact Bot Devs** - `Users Can Contact Bot Developers By .report command - .report (guild-invite-link) (your-issue) . `
+3 - **Any Issues , How To Contact Bot Devs** - `Users Can Contact Bot Developers By .report command - .report (your-issue) . `
 
 4 - **How Users Can Remove Their Data** - `Users Can Remove Their Data By .reset command .`
 
