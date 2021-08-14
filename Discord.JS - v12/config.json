@@ -1,0 +1,8 @@
+{
+  "bottoken": "your-bot-token",
+  "defaultprefix": "your-bot-default-prefix",
+  "botago": "86400000",
+  "botoldcolor": "RED",
+  "botnewcolor": "GREEN",
+  "botreportchannel": "channel-id-where-report-command-send-reports"
+}
