@@ -26,7 +26,7 @@ module.exports = {
             "value": botcommands
          }
       ])
-      embed1.addField("Help & Updates", "• For Any Help & Updates [Join My Discord Server](https://discord.gg/EtCsyts)")
+      embed1.addField("Help & Updates", `• For Any Help & Updates [Join My Discord Server](${bconfig.discordinvitelink})`)
       embed1.setColor("BLUE");
       embed1.setThumbnail(client.user.displayAvatarURL({ format: "png", size: 128, dynamic: true }))
       embed1.setTimestamp();
@@ -39,10 +39,10 @@ module.exports = {
       embed2.addFields([
          {
             "name": "Commands",
-            "value": servercommands
+            "value": minecraftcommands
          }
       ])
-      embed2.addField("Help & Updates", "• For Any Help & Updates [Join My Discord Server](https://discord.gg/EtCsyts)")
+      embed2.addField("Help & Updates", `• For Any Help & Updates [Join My Discord Server](${bconfig.discordinvitelink})`)
       embed2.setColor("BLUE");
       embed2.setThumbnail(client.user.displayAvatarURL({ format: "png", size: 128, dynamic: true }))
       embed2.setTimestamp();

@@ -35,6 +35,7 @@ You Have Found File Named **config.json** like this :
   "websitelink":"your-bot-website-link",
   "botinvitelink": "your-bot-invite-link",
   "bottoken": "your-bot-token",
+  "discordinvitelink": "your-discord-server-invite-link",
   "defaultprefix": "your-bot-default-prefix",
   "botago": "86400000",
   "botoldcolor": "RED",
@@ -45,8 +46,9 @@ You Have Found File Named **config.json** like this :
 In First Line Place **`Your Bot Website Link`** .
 In Second Line Place **`Your Bot Invite Link`** .
 In Third Line Place **`Your Bot Token`** .
-In Fourth Line Place **`Your Bot Default Prefix`** .
-Don't Make Changes In **`Fifth`** , **`Sixth`** And **`Seventh`** Line .
+In Fourth Line Place **`Your Discord Server Invite Link`** .
+In Fifth Line Place **`Your Bot Default Prefix`** .
+Don't Make Changes In **`Sixth`** , **`Seventh`** And **`Eight`** Line .
 In Last Line Place **`Discord Channel Id`** Where Bot Sends A Report Whenever Anyone Used Report Command .
 
 After Completing `Bot-Config` Move To `Bot-Startup` .

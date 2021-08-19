@@ -31,7 +31,7 @@ module.exports = async (client, guild) => {
 
         • For Reset The Ip and Port Run **${bconfig.defaultprefix}reset** Command and Run **${bconfig.defaultprefix}setup** Command Again For Setup The Bot.
  
-        • If You Need Any Help With ${client.user.username} Bot Feel Free To Join ${client.user.username} **[Support Server](https://discord.gg/EtCsyts)** To Get Your Answers .
+        • If You Need Any Help With ${client.user.username} Bot Feel Free To Join ${client.user.username} **[Support Server](${bconfig.discordinvitelink})** To Get Your Answers .
         
         `)
                             embedGC.setColor("BLUE");
