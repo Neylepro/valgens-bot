@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const predb = require('quick.db')
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'ip',
@@ -12,8 +13,8 @@ module.exports = {
         if (!message.guild.me.hasPermission('EMBED_LINKS')) return message.channel.send('Please Give Me **EMBED_LINKS** permission in this channel .')
 
         let embedIP = new Discord.MessageEmbed();
-        embedIP.setTitle("Minecraft Server Status")
-        embedIP.setURL("https://bot-mss.tk")
+        embedIP.setTitle(client.user.username)
+        embedIP.setURL(bconfig.websitelink)
         embedIP.setDescription("Your Minecraft Server IP & PORT Panel Here :-")
         embedIP.addFields([
             {

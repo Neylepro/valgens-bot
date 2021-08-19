@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'vote',
@@ -8,8 +9,8 @@ module.exports = {
         if (!message.guild.me.hasPermission('EMBED_LINKS')) return message.channel.send('Please Give Me **EMBED_LINKS** permission in this channel .')
 
         let embedVote = new Discord.MessageEmbed();
-        embedVote.setTitle("Minecraft Server Status")
-        embedVote.setURL("https://bot-mss.tk")
+        embedVote.setTitle(client.user.username)
+        embedVote.setURL(bconfig.websitelink)
         embedVote.setDescription("Voting Link Panel Here :-")
         embedVote.addFields([
             {

@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const predb = require('quick.db')
-const bconfig = require('../../../config.json')
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'prefix',
@@ -14,8 +14,8 @@ module.exports = {
         if (!predb.get(`guild_${message.guild.id}_prefix`, message.guild.id)) {
 
             let embedPrefix = new Discord.MessageEmbed()
-            embedPrefix.setTitle("Minecraft Server Status")
-            embedPrefix.setURL("https://bot-mss.tk")
+            embedPrefix.setTitle(client.user.username)
+            embedPrefix.setURL(bconfig.websitelink)
             embedPrefix.setDescription("Prefix Panel Here :-")
             embedPrefix.addFields([
                 {
@@ -35,8 +35,8 @@ module.exports = {
         } else {
 
             let embedCPrefix = new Discord.MessageEmbed()
-            embedCPrefix.setTitle("Minecraft Server Status")
-            embedCPrefix.setURL("https://bot-mss.tk")
+            embedCPrefix.setTitle(client.user.username)
+            embedCPrefix.setURL(bconfig.websitelink)
             embedCPrefix.setDescription("Prefix Panel Here :-")
             embedCPrefix.addFields([
                 {

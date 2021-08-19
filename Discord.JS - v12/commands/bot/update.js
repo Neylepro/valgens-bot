@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'update',
@@ -8,8 +9,8 @@ module.exports = {
         if (!message.guild.me.hasPermission('EMBED_LINKS')) return message.channel.send('Please Give Me **EMBED_LINKS** permission in this channel .')
 
         let embedUpdate = new Discord.MessageEmbed();
-        embedUpdate.setTitle("Minecraft Server Status")
-        embedUpdate.setURL("https://bot-mss.tk")
+        embedUpdate.setTitle(client.user.username)
+        embedUpdate.setURL(bconfig.websitelink)
         embedUpdate.setDescription(`
         • New Commands - status-java , status-bedrock
         `)

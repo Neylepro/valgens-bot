@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const predb = require('quick.db')
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'setup',
@@ -12,7 +13,7 @@ module.exports = {
         if (!message.guild.me.hasPermission('EMBED_LINKS')) return message.channel.send('Please Give Me **EMBED_LINKS** permission in this channel .')
 
         let embedargs = new Discord.MessageEmbed()
-        embedargs.setDescription(`• Please Use **.setup** command like : **.setup serverip serverport**`)
+        embedargs.setDescription(`• Please Use **.setup** command like : **${bconfig.defaultprefix}setup serverip serverport**`)
         embedargs.setColor('RED')
         embedargs.setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
         embedargs.setTimestamp()
@@ -37,7 +38,7 @@ module.exports = {
         if (args[2].length > 5) return message.channel.send(embedportlength)
 
         let embedsameip = new Discord.MessageEmbed()
-        embedsameip.setDescription(`• This One Is Already Your IP , For Reset Use **.reset**`)
+        embedsameip.setDescription(`• This One Is Already Your IP , For Reset Use **${bconfig.defaultprefix}reset**`)
         embedsameip.setColor('YELLOW')
         embedsameip.setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
         embedsameip.setTimestamp()
@@ -45,7 +46,7 @@ module.exports = {
         if (predb.has(`guild_${message.guild.id}_ip`, args[1])) return message.channel.send(embedsameip)
 
         let embedsameport = new Discord.MessageEmbed()
-        embedsameport.setDescription(`• This One Is Already Your PORT , For Reset Use **.reset**`)
+        embedsameport.setDescription(`• This One Is Already Your PORT , For Reset Use **${bconfig.defaultprefix}reset**`)
         embedsameport.setColor('YELLOW')
         embedsameport.setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
         embedsameport.setTimestamp()
@@ -56,8 +57,8 @@ module.exports = {
         await predb.set(`guild_${message.guild.id}_port`, args[2])
 
         let embedSetup = new Discord.MessageEmbed();
-        embedSetup.setTitle("Minecraft Server Status")
-        embedSetup.setURL("https://bot-mss.tk")
+        embedSetup.setTitle(client.user.username)
+        embedSetup.setURL(bconfig.websitelink)
         embedSetup.setDescription("Setup Panel Here :-")
         embedSetup.addFields([
             {

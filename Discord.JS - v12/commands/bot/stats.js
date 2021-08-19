@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const bconfig = require("../../../config.json");
+const bconfig = require("../../config.json");
 
 module.exports = {
     name: 'stats',
@@ -25,8 +25,8 @@ module.exports = {
         let ago = Math.floor(now / bconfig.botago)
 
         let embedBotstats = new Discord.MessageEmbed();
-        embedBotstats.setTitle("Minecraft Server Status")
-        embedBotstats.setURL("https://bot-mss.tk")
+        embedBotstats.setTitle(client.user.username)
+        embedBotstats.setURL(bconfig.websitelink)
         embedBotstats.setDescription("My Stats Panel Here :-")
         embedBotstats.addFields([
             {
@@ -41,7 +41,7 @@ module.exports = {
             },
             {
                 "name": "Default-Prefix",
-                "value": "```" + `.` + "```",
+                "value": "```" + `${bconfig.defaultprefix}` + "```",
                 "inline": true
             },
             {

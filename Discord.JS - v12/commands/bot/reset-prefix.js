@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const predb = require('quick.db')
-const bconfig = require('../../../config.json')
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'reset-prefix',
@@ -23,10 +23,12 @@ module.exports = {
         await predb.delete(`guild_${message.guild.id}_prefix`)
 
         let embedp = new Discord.MessageEmbed()
+        embedp.setTitle(client.user.username)
+        embedp.setURL(bconfig.websitelink)
         embedp.setDescription(`• Successfully Resets Your Server Custom Prefix`)
         embedp.addFields([
             {
-                "name": "Prefix",
+                "name": "Current-Prefix",
                 "value": "```" + `${bconfig.defaultprefix}` + "```"
             }
         ])

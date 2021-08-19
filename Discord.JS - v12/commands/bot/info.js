@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const bconfig = require('../../config.json')
 
 module.exports = {
   name: 'info',
@@ -8,8 +9,8 @@ module.exports = {
     if (!message.guild.me.hasPermission('EMBED_LINKS')) return message.channel.send('Please Give Me **EMBED_LINKS** permission in this channel .')
 
     let embedInfo = new Discord.MessageEmbed();
-    embedInfo.setTitle("Minecraft Server Status")
-    embedInfo.setURL("https://bot-mss.tk")
+    embedInfo.setTitle(client.user.username)
+    embedInfo.setURL(bconfig.websitelink)
     embedInfo.setDescription("Info Panel Here :-")
     embedInfo.addFields([
       {
@@ -44,7 +45,7 @@ module.exports = {
       },
       {
         "name": "Website",
-        "value": "**[Here](https://bot-mss.tk)**",
+        "value": `**[Here](${bconfig.websitelink})**`,
         "inline": true
       },
       {

@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'invite',
@@ -7,11 +8,11 @@ module.exports = {
         // bot-perm
         if (!message.guild.me.hasPermission('EMBED_LINKS')) return message.channel.send('Please Give Me **EMBED_LINKS** permission in this channel .')
 
-        let invlink = "[Here](https://discord.com/api/oauth2/authorize?client_id=802868654957789204&permissions=84992&scope=bot)"
+        let invlink = `[Here](${bconfig.botinvitelink})`
 
         let embedInvite = new Discord.MessageEmbed();
-        embedInvite.setTitle("Minecraft Server Status")
-        embedInvite.setURL("https://bot-mss.tk")
+        embedInvite.setTitle(client.user.username)
+        embedInvite.setURL(bconfig.websitelink)
         embedInvite.setDescription("Invite Link Panel Here :-")
         embedInvite.addField("Invite", invlink)
         embedInvite.setColor("BLUE");

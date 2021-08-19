@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const bconfig = require('../../../config.json')
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'report',
@@ -12,7 +12,7 @@ module.exports = {
         const ReportMessage = args[1]
 
         let embednomsg = new Discord.MessageEmbed()
-        embednomsg.setDescription(`• Please Use **.report** command like : **.report your-issue**`)
+        embednomsg.setDescription(`• Please Use **${bconfig.defaultprefix}report** command like : **${bconfig.defaultprefix}report your-issue**`)
         embednomsg.setColor('RED')
         embednomsg.setFooter(`${message.author.tag}`, message.author.displayAvatarURL());
         embednomsg.setTimestamp()
@@ -28,8 +28,8 @@ module.exports = {
         let ReportInvLink = `${InvLinkUrl}` + `${InvLinkCode}`
 
         let embedmemreport = new Discord.MessageEmbed()
-        embedmemreport.setTitle("Minecraft Server Status")
-        embedmemreport.setURL("https://bot-mss.tk")
+        embedmemreport.setTitle(client.user.username)
+        embedmemreport.setURL(bconfig.websitelink)
         embedmemreport.setDescription(`• You're issue have been succesfully sent to the developers!`)
         embedmemreport.setThumbnail(client.user.displayAvatarURL({ format: "png", size: 128, dynamic: true }))
         embedmemreport.setColor('GREEN')
@@ -39,8 +39,8 @@ module.exports = {
         message.channel.send(embedmemreport)
 
         let embedmemtodevreport = new Discord.MessageEmbed()
-        embedmemtodevreport.setTitle("Minecraft Server Status")
-        embedmemtodevreport.setURL("https://bot-mss.tk")
+        embedmemtodevreport.setTitle(client.user.username)
+        embedmemtodevreport.setURL(bconfig.websitelink)
         embedmemtodevreport.setDescription("Report Panel Here :-")
         embedmemtodevreport.addFields([
             {

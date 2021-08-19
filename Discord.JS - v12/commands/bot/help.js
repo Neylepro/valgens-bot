@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const paginationEmbed = require('discord.js-pagination');
+const bconfig = require('../../config.json')
 
 module.exports = {
    name: 'help',
@@ -16,8 +17,8 @@ module.exports = {
       ]
 
       let embed1 = new Discord.MessageEmbed();
-      embed1.setTitle("Minecraft Server Status")
-      embed1.setURL("https://bot-mss.tk")
+      embed1.setTitle(client.user.username)
+      embed1.setURL(bconfig.websitelink)
       embed1.setDescription("Helping Panel Here :-")
       embed1.addFields([
          {
@@ -32,13 +33,13 @@ module.exports = {
 
 
       let embed2 = new Discord.MessageEmbed();
-      embed2.setTitle("Minecraft Server Status")
-      embed2.setURL("https://bot-mss.tk")
+      embed2.setTitle(client.user.username)
+      embed2.setURL(bconfig.websitelink)
       embed2.setDescription("Helping Panel Here :-")
       embed2.addFields([
          {
             "name": "Commands",
-            "value": minecraftcommands
+            "value": servercommands
          }
       ])
       embed2.addField("Help & Updates", "• For Any Help & Updates [Join My Discord Server](https://discord.gg/EtCsyts)")

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const predb = require('quick.db')
 const fetch = require('node-fetch')
-const bconfig = require("../../../config.json");
+const bconfig = require("../../config.json");
 
 module.exports = {
     name: 'status-bedrock',
@@ -17,7 +17,7 @@ module.exports = {
         embedstatuserr.setDescription(`
         • Maybe, IP and PORT Has Been Not Setuped For This Server .
 
-        • If you thought that bot is giving wrong reply then use **.reset** for reset and then **.setup** command for setup your server ip and port again`)
+        • If you thought that bot is giving wrong reply then use **${bconfig.defaultprefix}reset** for reset and then **${bconfig.defaultprefix}setup** command for setup your server ip and port again`)
         embedstatuserr.setColor('RED')
         embedstatuserr.setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
         embedstatuserr.setTimestamp()
@@ -78,8 +78,8 @@ module.exports = {
                     }
 
                     let embedStatus = new Discord.MessageEmbed();
-                    embedStatus.setTitle("Minecraft Server Status")
-                    embedStatus.setURL("https://bot-mss.tk")
+                    embedStatus.setTitle(client.user.username)
+                    embedStatus.setURL(bconfig.websitelink)
                     embedStatus.setDescription("Your Minecraft Server Panel Here :-")
                     embedStatus.addFields([
                         {

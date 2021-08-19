@@ -14,7 +14,7 @@ module.exports = async (client) => {
 
    client.user.setStatus("online")
 
-   let status = `${bconfig.defaultprefix}help | bot-mss.tk`
+   let status = `${bconfig.defaultprefix}help | ${bconfig.websitelink}`
 
    client.user.setActivity(status, { type: "PLAYING" })
 

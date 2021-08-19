@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const bconfig = require('../config.json')
 
 module.exports = async (client, guild) => {
 
@@ -17,20 +18,20 @@ module.exports = async (client, guild) => {
                         if (channel.permissionsFor(client.user).has("EMBED_LINKS") === true) {
 
                             let embedGC = new Discord.MessageEmbed();
-                            embedGC.setTitle("Minecraft Server Status")
-                            embedGC.setURL("https://bot-mss.tk")
+                            embedGC.setTitle(client.user.username)
+                            embedGC.setURL(bconfig.websitelink)
                             embedGC.setDescription(`
-        • Thanks for adding me to your server , To Get List Of All Commands Run **.help** Command .
+        • Thanks for adding me to your server , To Get List Of All Commands Run **${bconfig.defaultprefix}help** Command .
  
-        • For Setting Up The Bot Run **.setup** Command , This Command Setups Your Server Ip and Port , Correct Way Of Using This Command Is **.setup ip port** .
+        • For Setting Up The Bot Run **${bconfig.defaultprefix}setup** Command , This Command Setups Your Server Ip and Port , Correct Way Of Using This Command Is **${bconfig.defaultprefix}setup ip port** .
  
-        • After Setup , If Your Server Is Java Minecraft Server Then Run **.status-java** Command To Get Server Status .
+        • After Setup , If Your Server Is Java Minecraft Server Then Run **${bconfig.defaultprefix}status-java** Command To Get Server Status .
 
-        • After Setup , If Your Server Is Bedrock Minecraft Server Then Run **.status-bedrock** Command To Get Server Status .
+        • After Setup , If Your Server Is Bedrock Minecraft Server Then Run **${bconfig.defaultprefix}status-bedrock** Command To Get Server Status .
 
-        • For Reset The Ip and Port Run **.reset** Command and Run **.setup** Command Again For Setup The Bot.
+        • For Reset The Ip and Port Run **${bconfig.defaultprefix}reset** Command and Run **${bconfig.defaultprefix}setup** Command Again For Setup The Bot.
  
-        • If You Need Any Help With Minecraft Server Status Bot Feel Free To Join Minecraft Server Status **[Support Server](https://discord.gg/EtCsyts)** To Get Your Answers .
+        • If You Need Any Help With ${client.user.username} Bot Feel Free To Join ${client.user.username} **[Support Server](https://discord.gg/EtCsyts)** To Get Your Answers .
         
         `)
                             embedGC.setColor("BLUE");

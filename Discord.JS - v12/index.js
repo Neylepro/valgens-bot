@@ -7,13 +7,13 @@ const glob = require('glob');
 
 // Bot Command Handler
 client.commands = new Discord.Collection();
-
 const cmdFiles = glob.sync('./commands/**/*.js');
 for (const file of cmdFiles) {
    const command = require(file);
    client.commands.set(command.name, command);
 }
 
+// Bot Event Handler
 fs.readdir('./events', (err, files) => {
    if (err) return console.log(err);
    files.forEach((file) => {

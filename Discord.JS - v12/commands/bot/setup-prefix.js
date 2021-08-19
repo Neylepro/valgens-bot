@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const predb = require('quick.db')
+const bconfig = require('../../config.json')
 
 module.exports = {
     name: 'setup-prefix',
@@ -12,7 +13,7 @@ module.exports = {
         if (!message.guild.me.hasPermission('EMBED_LINKS')) return message.channel.send('Please Give Me **EMBED_LINKS** permission in this channel .')
 
         let embedargs = new Discord.MessageEmbed()
-        embedargs.setDescription(`• Please Use This Command Like **.setup-prefix <your-server-custom-prefix>**`)
+        embedargs.setDescription(`• Please Use This Command Like **${bconfig.defaultprefix}setup-prefix <your-server-custom-prefix>**`)
         embedargs.setColor('RED')
         embedargs.setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
         embedargs.setTimestamp()
@@ -38,6 +39,8 @@ module.exports = {
         await predb.set(`guild_${message.guild.id}_prefix`, args[1])
 
         let embeds = new Discord.MessageEmbed()
+        embeds.setTitle(client.user.username)
+        embeds.setURL(bconfig.websitelink)
         embeds.setDescription(`• Custom Prefix For Your Server Is Successfully Setuped`)
         embeds.addFields([
             {

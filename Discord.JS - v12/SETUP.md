@@ -8,7 +8,7 @@
 
 Before Go Into `Bot-Config` or `Bot-Startup` Make Sure You Have Downloaded And Installed These Things :
 
-**[Recommended Version Of NodeJS](https://nodejs.org/en/)**
+**[Latest Version Of NodeJS](https://nodejs.org/en/)**
 
 After Successfull Installation Of NodeJS , Follow This Process :
 
@@ -32,6 +32,8 @@ You Have Found File Named **config.json** like this :
 
 ```json
 {
+  "websitelink":"your-bot-website-link",
+  "botinvitelink": "your-bot-invite-link",
   "bottoken": "your-bot-token",
   "defaultprefix": "your-bot-default-prefix",
   "botago": "86400000",
@@ -40,10 +42,11 @@ You Have Found File Named **config.json** like this :
   "botreportchannel": "channel-id-where-report-command-send-reports"
 }
 ```
-
-In First Line Place **`Your Bot Token`** .
-In Second Line Place **`Your Bot Default Prefix`** .
-Don't Make Changes In **`Third`** , **`Fourth`** And **`Fifth`** Line .
+In First Line Place **`Your Bot Website Link`** .
+In Second Line Place **`Your Bot Invite Link`** .
+In Third Line Place **`Your Bot Token`** .
+In Fourth Line Place **`Your Bot Default Prefix`** .
+Don't Make Changes In **`Fifth`** , **`Sixth`** And **`Seventh`** Line .
 In Last Line Place **`Discord Channel Id`** Where Bot Sends A Report Whenever Anyone Used Report Command .
 
 After Completing `Bot-Config` Move To `Bot-Startup` .
