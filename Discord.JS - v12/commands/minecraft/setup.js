@@ -38,20 +38,12 @@ module.exports = {
         if (args[2].length > 5) return message.channel.send(embedportlength)
 
         let embedsameip = new Discord.MessageEmbed()
-        embedsameip.setDescription(`• This One Is Already Your IP , For Reset Use **${bconfig.defaultprefix}reset**`)
+        embedsameip.setDescription(`• Looks Like You Server Has Already An IP , For View It Use **${bconfig.defaultprefix}ip** , For Reset Use **${bconfig.defaultprefix}reset**`)
         embedsameip.setColor('YELLOW')
         embedsameip.setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
         embedsameip.setTimestamp()
 
-        if (predb.has(`guild_${message.guild.id}_ip`, args[1])) return message.channel.send(embedsameip)
-
-        let embedsameport = new Discord.MessageEmbed()
-        embedsameport.setDescription(`• This One Is Already Your PORT , For Reset Use **${bconfig.defaultprefix}reset**`)
-        embedsameport.setColor('YELLOW')
-        embedsameport.setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
-        embedsameport.setTimestamp()
-
-        if (predb.has(`guild_${message.guild.id}_port`, args[2])) return message.channel.send(embedsameport)
+        if (predb.has(`guild_${message.guild.id}_ip`)) return message.channel.send(embedsameip)
 
         await predb.set(`guild_${message.guild.id}_ip`, args[1])
         await predb.set(`guild_${message.guild.id}_port`, args[2])
