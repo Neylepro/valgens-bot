@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const predb = require('quick.db')
-const fetch = require('node-fetch')
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const bconfig = require("../../config.json");
 
 module.exports = {
